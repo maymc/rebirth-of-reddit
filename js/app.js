@@ -12,7 +12,6 @@ const request = (url, callback) => {
 request(url, res => {
   const myObj = JSON.parse(res.currentTarget.response);
   console.log("response: ", myObj);
-})
+  console.log("articleTitle: ", myObj[0].data.children[0].data.title);
 
-// //Invoke request function
-// request("http://www.reddit.com/r/javascript.json");
+})
