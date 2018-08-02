@@ -1,5 +1,5 @@
 console.log("sanity check");
-const url = "https://www.reddit.com/r/AnimalCollective/comments/41ilyd/funny_animals_compilation_funny_and_cute_animal.json";
+const url = "https://www.reddit.com/r/aww/comments/90teub/a_bucket_full_of_love.json";
 
 
 const request = (url, callback) => {
