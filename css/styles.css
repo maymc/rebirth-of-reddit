@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  background-image: url("../assets/bg.jpg");
+  background-size: cover;
+}
+
+#head{
+  background-color: white;
+  text-align: center;
+}
+
+#logo{
+  height: 50px;
+  width: 110px;
+}
+
+#nav{
+  margin: 0;
+  background-color: dimgrey;
+}
+
+ul {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0;
+  justify-content: center;
+}
+
+li{
+  padding: 0 20px;
+  list-style-type: none;
+}
+
+#foot{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: dimgrey;
+  text-align: center;
+}
+
