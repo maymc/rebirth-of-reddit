@@ -39,8 +39,15 @@ li{
   text-align: center;
 }
 
-.articles{
+.posts{
   background-color: lightblue;
-  margin: 10px;
+  margin: 10px 200px;
+}
+
+img {
+  max-height: 200px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
 }
 
