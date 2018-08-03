@@ -17,6 +17,8 @@ body {
 #nav{
   margin: 0;
   background-color: dimgrey;
+  font-family: 'Oswald', sans-serif;
+
 }
 
 ul {
@@ -42,12 +44,22 @@ li{
 .posts{
   background-color: lightblue;
   margin: 10px 200px;
+  text-align: center;
+}
+#title{
+  font-size: 1.2em;
+  font-family: 'Oswald', sans-serif;
+}
+#author{
+  font-size: 0.9em;
+  font-family: 'Lato', sans-serif;
 }
 
 img {
-  max-height: 200px;
-  max-width: 200px;
+  max-height: 300px;
+  max-width: 300px;
   height: auto;
   width: auto;
+  padding: 10px;
 }
 
