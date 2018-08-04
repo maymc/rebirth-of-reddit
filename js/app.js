@@ -10,65 +10,46 @@ let randomClicked = false;
 let myBoardsClicked = false;
 let getTheAppClicked = false;
 let url = null;
+let postsClass = document.getElementsByClassName("posts");
 
+//Initial population of page
+populate("https://www.reddit.com/r/rarepuppers.json");
+
+//If a nav button is clicked, change the request url
 document.getElementById("random").addEventListener("click", setRandomClicked);
 function setRandomClicked() {
   console.log("random clicked");
-  randomClicked = true;
-  myBoardsClicked = false;
-  getTheAppClicked = false;
-  //return randomClicked;
-  console.log("random flag: ", randomClicked);
   populate("https://www.reddit.com/r/flowers.json");
 };
 
 document.getElementById("myBoards").addEventListener("click", setMyBoardsClicked);
 function setMyBoardsClicked() {
   console.log("myBoards clicked");
-  randomClicked = false;
-  myBoardsClicked = true;
-  getTheAppClicked = false;
-  //return myBoardsClicked;
-  console.log("myBoardsClicked flag: ", myBoardsClicked);
   populate("https://www.reddit.com/r/shiba.json");
 };
 
 document.getElementById("getTheApp").addEventListener("click", setGetTheAppClicked);
 function setGetTheAppClicked() {
   console.log("getTheApp clicked");
-  randomClicked = false;
-  myBoardsClicked = false;
-  getTheAppClicked = true;
-  //return getTheAppClicked;
-  console.log("getTheApp flag: ", getTheAppClicked);
   populate("https://www.reddit.com/r/Hawaii.json");
 };
 
-// if (randomClicked === true) {
-//   console.log("random flag: ", randomClicked);
-//   populate("https://www.reddit.com/r/flowers.json");
-// }
-// else if (myBoardsClicked === true) {
-//   console.log("myBoardsClicked flag: ", myBoardsClicked);
-//   populate("https://www.reddit.com/r/shiba.json");
-// }
-// else if (getTheAppClicked === true) {
-//   console.log("getTheApp flag: ", getTheAppClicked);
-//   populate("https://www.reddit.com/r/Hawaii.json");
-// }
-// else {
-//   randomClicked = false;
-//   myBoardsClicked = false;
-//   getTheAppClicked = false;
-//   url = "https://www.reddit.com/r/rarepuppers.json";
-// }
-
+//Function to populate the reddit page with posts
 function populate(url) {
+
+  let postsBodyElem = document.getElementById("postsBody");
+
+  //Remove all the previous posts so the new url's posts can be populated
+  for (let j = postsClass.length - 1; j >= 0; j--) {
+    postsClass[j].remove();
+    //postsBodyElem.removeChild(postsBodyElem.childNodes[j])
+  }
+
+  //Populate the page with posts
   request(url, res => {
     let myObj = JSON.parse(res.currentTarget.response);
     for (let i = 0; i < myObj.data.children.length; i++) {
       //Create divs
-      let postsBodyElem = document.getElementById("postsBody");
       let postElem = document.createElement("div");
       postElem.className = "posts";
       let titleElem = document.createElement("div");
