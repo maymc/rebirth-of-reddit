@@ -39,6 +39,7 @@ Use the sub-reddit API to achieve the following:
 1. Again, we have to have a good code demo as well so please use appropriate best practices when building out the app.
 1. Set up your project as a GitHub page so that we can demo your work.
 
+Run using `live-server`.
 
 ### Bonus
 
